@@ -1,7 +1,7 @@
 package com.sphenon.basics.customary;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -1982,6 +1982,54 @@ public class CustomaryContext {
         ExceptionConfigurationError.createAndThrow(cc, cause, message);
     }
 
+    public void throwConfigurationError(CallContext cc, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5, String an6, Object av6) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5, an6, av6), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionConfigurationError.createAndThrow(cc, message);
+    }
+
+    public void throwConfigurationError(CallContext cc, Throwable cause, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5, String an6, Object av6) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5, an6, av6), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionConfigurationError.createAndThrow(cc, cause, message);
+    }
+
+    public void throwConfigurationError(CallContext cc, ProblemState problem_state, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5, String an6, Object av6) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5, an6, av6), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionConfigurationError.createAndThrow(cc, message);
+    }
+
+    public void throwConfigurationError(CallContext cc, ProblemState problem_state, Throwable cause, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5, String an6, Object av6) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5, an6, av6), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionConfigurationError.createAndThrow(cc, cause, message);
+    }
+
+    public void throwConfigurationError(CallContext cc, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5, String an6, Object av6, String an7, Object av7) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5, an6, av6, an7, av7), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionConfigurationError.createAndThrow(cc, message);
+    }
+
+    public void throwConfigurationError(CallContext cc, Throwable cause, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5, String an6, Object av6, String an7, Object av7) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5, an6, av6, an7, av7), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionConfigurationError.createAndThrow(cc, cause, message);
+    }
+
+    public void throwConfigurationError(CallContext cc, ProblemState problem_state, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5, String an6, Object av6, String an7, Object av7) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5, an6, av6, an7, av7), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionConfigurationError.createAndThrow(cc, message);
+    }
+
+    public void throwConfigurationError(CallContext cc, ProblemState problem_state, Throwable cause, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5, String an6, Object av6, String an7, Object av7) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5, an6, av6, an7, av7), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionConfigurationError.createAndThrow(cc, cause, message);
+    }
+
     public void throwConfigurationError(CallContext cc, Variative_String_ text) {
         Message message = SystemStateMessage.create(cc, MessageText.create(cc, text), ProblemState.ERROR);
         this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
@@ -2148,6 +2196,354 @@ public class CustomaryContext {
         Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5), problem_state);
         this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
         ExceptionConfigurationError.createAndThrow(cc, cause, message);
+    }
+
+    //------------------------------------------------------------------------------------------------
+
+    public ExceptionSecurityViolation createSecurityViolation(CallContext cc, String text, Object... arguments) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, arguments), ProblemState.ERROR);
+        return ExceptionSecurityViolation.createExceptionSecurityViolation(cc, message);
+    }
+
+    public ExceptionSecurityViolation createSecurityViolation(CallContext cc, Throwable cause, String text, Object... arguments) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, arguments), ProblemState.ERROR);
+        return ExceptionSecurityViolation.createExceptionSecurityViolation(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, String text) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, String text) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, String text) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, String text) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, String text, Object[][] attributes) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, attributes), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, String text, Object[][] attributes) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, attributes), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, String text, Object[][] attributes) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, attributes), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, String text, Object[][] attributes) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, attributes), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, String text, String an1, Object av1) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, String text, String an1, Object av1) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, String text, String an1, Object av1) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, String text, String an1, Object av1) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, String text, String an1, Object av1, String an2, Object av2) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, String text, String an1, Object av1, String an2, Object av2) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, String text, String an1, Object av1, String an2, Object av2) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, String text, String an1, Object av1, String an2, Object av2) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, String text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Variative_String_ text) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, Variative_String_ text) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Variative_String_ text) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, Variative_String_ text) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Variative_String_ text, Object[][] attributes) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, attributes), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, Variative_String_ text, Object[][] attributes) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, attributes), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Variative_String_ text, Object[][] attributes) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, attributes), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, Variative_String_ text, Object[][] attributes) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, attributes), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Variative_String_ text, String an1, Object av1) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, Variative_String_ text, String an1, Object av1) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Variative_String_ text, String an1, Object av1) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, Variative_String_ text, String an1, Object av1) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Variative_String_ text, String an1, Object av1, String an2, Object av2) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, Variative_String_ text, String an1, Object av1, String an2, Object av2) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Variative_String_ text, String an1, Object av1, String an2, Object av2) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, Variative_String_ text, String an1, Object av1, String an2, Object av2) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, Throwable cause, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5), ProblemState.ERROR);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, message);
+    }
+
+    public void throwSecurityViolation(CallContext cc, ProblemState problem_state, Throwable cause, Variative_String_ text, String an1, Object av1, String an2, Object av2, String an3, Object av3, String an4, Object av4, String an5, Object av5) {
+        Message message = SystemStateMessage.create(cc, MessageText.create(cc, text, an1, av1, an2, av2, an3, av3, an4, av4, an5, av5), problem_state);
+        this.getNotificationContext(cc).send(cc, message, Notifier.DISCARDABLE, Notifier.TRANSIENT, Notifier.PRODUCTION);
+        ExceptionSecurityViolation.createAndThrow(cc, cause, message);
     }
 
     //------------------------------------------------------------------------------------------------

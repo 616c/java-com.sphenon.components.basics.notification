@@ -1,7 +1,7 @@
 package com.sphenon.basics.notification;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -17,11 +17,12 @@ package com.sphenon.basics.notification;
 import com.sphenon.basics.context.*;
 import com.sphenon.basics.context.classes.*;
 import com.sphenon.basics.message.*;
+import com.sphenon.basics.system.*;
 import com.sphenon.basics.configuration.*;
 
 import com.sphenon.basics.notification.classes.*;
 
-abstract public class Channel
+abstract public class Channel extends DerivablePrintStream
 {
     static final public Class _class = Channel.class;
 
@@ -42,4 +43,13 @@ abstract public class Channel
     abstract public void send(CallContext cc, Message message);
 
     abstract public void setAttachmentHandler (CallContext cc, AttachmentHandler attachment_handler);
+
+    public void print(String string) {
+        CallContext context = RootContext.getFallbackCallContext();
+        send(context, TraceMessage.create(context, MessageText.create(context, string)));
+    }
+
+    public void println() {
+        // in log channel, no LNs needed
+    }
 }
